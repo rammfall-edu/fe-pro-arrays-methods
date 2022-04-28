@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        html,
+        ul,
+        h1,
+        h2,
+        h3,
+        p,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            padding: 20px;
+        }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 10px;
+        }
+
+        .sidebar div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            transition: all .3s;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: white;
+            box-shadow: 6px 6px 10px black;
+            border-radius: 10px;
+        }
+
+        li img {
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .discount {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: red;
+            font-weight: bold;
+            color: white;
+            transform: rotate(37deg);
+            top: 29px;
+            right: -72px;
+        }
+
+        .through {
+            text-decoration: line-through;
+        }
+
+        .color {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-left: 10px;
+            border: 1px solid;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<main class="wrapper">
+    <aside class="sidebar">
+        <section>
+            <h2 class="section__title">
+                Prices options
+            </h2>
+            <div>
+                <label>
+                    From
+                    <input type="range"><span></span>
+                </label>
+                <label>
+                    To
+                    <input type="range"><span></span>
+                </label>
+            </div>
+        </section>
+        <section>
+            <h2 class="section__title">
+                Sort
+            </h2>
+            <div class="sorters">
+                <button data-sorter="Max">
+                    Max price first
+                </button>
+                <button data-sorter="Min">
+                    Min price first
+                </button>
+            </div>
+        </section>
+    </aside>
+    <ul class="list">
+    </ul>
+</main>
+
+<script type="module" src="src/goods.js"></script>
+<script type="module" src="src/index.js"></script>
+<script type="module" src="src/renders.js"></script>
+</body>
+</html>
