@@ -4,7 +4,9 @@ import { goods } from './goods.js';
  * @param {string} brand
  * @returns {*}
  */
-const brandFilter = (brand) => {};
+const brandFilter = (brand) => {
+return goods.filter(brandName => brandName.includes('brand'));
+};
 
 /**
  * @param {string} color
