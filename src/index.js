@@ -5,7 +5,7 @@ import { goods } from './goods.js';
  * @returns {*}
  */
 const brandFilter = (brand) => {
-return goods.filter((brandName) => brandName.brand);
+return goods.filter((currentBrand) => currentBrand.brand.includes('brand'));
 };
 
 /**
