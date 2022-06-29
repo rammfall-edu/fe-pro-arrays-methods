@@ -13,7 +13,7 @@ return goods.filter((goodBrand) => goodBrand.brand === brand);
  * @param {string} color
  * @returns {*}
  */
-const colorFilter = (color) => {
+const colorFilter = (color) //=> {
 return goods.filter((goodColor) => goodColor.color === color); 
 };
 
