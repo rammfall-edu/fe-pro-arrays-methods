@@ -1,5 +1,6 @@
 import { goods } from './goods.js';
 
+
 /**
  * @param {string} brand
  * @returns {*}
