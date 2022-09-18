@@ -37,7 +37,7 @@ const memoryFilter = (memory) => {
  * @returns {*}
  */
 const priceFilter = (price) => {
-  return goods.filter((rightPrice) => rightModel.price === price)
+  return goods.filter((rightPrice) => rightPrice.price === price)
 };
 
 /**
