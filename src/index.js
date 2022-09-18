@@ -65,16 +65,26 @@ const rangeFilter = (from, to) => {
 };
 
 const minPriceReducer = () => {
-  return goods.rвsuce((item) => );
+  return goods.reduce(() => {
+    Math.min(goods.price)
+  }, "")
 };
 
 const maxPriceReducer = () => {};
 
 const toMaxSorter = () => {
-  return goods.sort((a, b) => a - b)
+  goods.sort((a, b) => {
+    if (a.price > b.price) return 1;
+    if (a.price < b.price) return -1;
+    return 0;
+  })
 };
 const toMinSorter = () => {
-  return goods.sort((a, b) => b -a)
+  goods.sort((a, b) => {
+    if (b.price > a.price) return 1;
+    if (b.price < a.price) return -1;
+    return 0;
+  })
 };
 
 export const filters = { 
