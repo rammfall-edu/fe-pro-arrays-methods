@@ -71,8 +71,8 @@ const minPriceReducer = () => {
 };
 
 const maxPriceReducer = () => {
-  return goods.reduce((acc, curr) => {
-    Math.max(acc, curr.price)
+  goods.reduce((acc, curr) => {
+    return Math.max(acc, curr.price)
   }, 0)
 };
 
