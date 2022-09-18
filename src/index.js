@@ -21,7 +21,7 @@ const colorFilter = (color) => {
  * @returns {*}
  */
 const modelFilter = (model) => {
-  return goods.filter((rightModel) => rightModel.Model === model)
+  return goods.filter((rightModel) => rightModel.model === model)
 };
 
 /**
@@ -29,7 +29,7 @@ const modelFilter = (model) => {
  * @returns {*}
  */
 const memoryFilter = (memory) => {
-  return goods.filter((rightMemory) => rightModel.Memory === memory)
+  return goods.filter((rightMemory) => rightModel.memory === memory)
 };
 
 /**
@@ -37,7 +37,7 @@ const memoryFilter = (memory) => {
  * @returns {*}
  */
 const priceFilter = (price) => {
-  return goods.filter((rightPrice) => rightModel.Price === price)
+  return goods.filter((rightPrice) => rightModel.price === price)
 };
 
 /**
@@ -70,7 +70,11 @@ const minPriceReducer = () => {
   }, "")
 };
 
-const maxPriceReducer = () => {};
+const maxPriceReducer = () => {
+  return goods.reduce(() => {
+    Math.max(goods.price)
+  }, "")
+};
 
 const toMaxSorter = () => {
   goods.sort((a, b) => {
