@@ -77,7 +77,7 @@ const toMinSorter = () => {
   return goods.sort((a, b) => b -a)
 };
 
-export const filters = {
+export const filters = { 
   brandFilter,
   countryFilter,
   priceFilter,
