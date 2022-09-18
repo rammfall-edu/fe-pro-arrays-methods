@@ -29,7 +29,7 @@ const modelFilter = (model) => {
  * @returns {*}
  */
 const memoryFilter = (memory) => {
-  return goods.filter((rightMemory) => rightModel.memory === memory)
+  return goods.filter((rightMemory) => rightMemory.memory === memory)
 };
 
 /**
@@ -67,7 +67,7 @@ const rangeFilter = (from, to) => {
 const minPriceReducer = () => {
   goods.reduce((acc, curr) => {
     return Math.min(acc, curr.price)
-  }, "")
+  }, [])
 };
 
 const maxPriceReducer = () => {
