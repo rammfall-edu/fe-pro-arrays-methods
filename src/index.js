@@ -77,7 +77,7 @@ const maxPriceReducer = () => {
 };
 
 const toMaxSorter = () => {
-  goods.sort((a, b) => {
+  return goods.sort((a, b) => {
     if (a.price > b.price) return 1;
     if (a.price < b.price) return -1;
     return 0;
