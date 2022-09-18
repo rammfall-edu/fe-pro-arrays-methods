@@ -65,8 +65,8 @@ const rangeFilter = (from, to) => {
 };
 
 const minPriceReducer = () => {
-  return goods.reduce(() => {
-    Math.min(goods.price)
+  goods.reduce((acc, curr) => {
+    return Math.min(acc, curr.price)
   }, "")
 };
 
