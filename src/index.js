@@ -72,7 +72,7 @@ const minPriceReducer = () => {
 
 const maxPriceReducer = () => {
   let pricesArr = goods.filter(n => { return n.price === n.price }).map(n => n.price);
-  let maxPrice = pricesArr.reduce((accum, price) => { return Math.max(accum, price) }, Infinity); 
+  let maxPrice = pricesArr.reduce((accum, price) => { return Math.max(accum, price) }, -Infinity); 
   return maxPrice;
 };
 
