@@ -67,14 +67,14 @@ const rangeFilter = (from, to) => {
 const minPriceReducer = () => {
   const minCost = goods.reduce((acc, price) => {
      Math.min(acc, price)
-  }, "")
+  }, Infinity)
   return minCost
 };
 
 const maxPriceReducer = () => {
   const maxCost = goods.reduce((acc, price) => {
     Math.max(acc, price)
-  }, 0)
+  }, Infinity)
   return maxCost
 };
 
