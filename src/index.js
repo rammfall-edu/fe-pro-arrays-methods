@@ -65,17 +65,15 @@ const rangeFilter = (from, to) => {
 };
 
 const minPriceReducer = () => {
-  const minCost = goods.reduce((acc, price) => {
-     Math.min(acc, price)
-  }, Infinity)
-  return minCost
+  let pricesArr = goods.filter(n => { return n.price === n.price }).map(n => n.price);
+  let minPrice = pricesArr.reduce((accum, price) => { return Math.min(accum, price) }, Infinity); 
+  return minPrice;
 };
 
 const maxPriceReducer = () => {
-  const maxCost = goods.reduce((acc, price) => {
-    Math.max(acc, price)
-  }, Infinity)
-  return maxCost
+  let pricesArr = goods.filter(n => { return n.price === n.price }).map(n => n.price);
+  let maxPrice = pricesArr.reduce((accum, price) => { return Math.max(accum, price) }, Infinity); 
+  return maxPrice;
 };
 
 const toMaxSorter = () => {
