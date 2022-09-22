@@ -1,4 +1,4 @@
-import { colors, goods } from './goods.js';
+  import { colors, goods } from './goods.js';
 
 /**
  * @param {string} brand
@@ -51,7 +51,7 @@ const priceFilter = (price) => {
  * @param {string} country
  * @returns {*}
  */
-const countryFilter = (country) => { 
+const countryFilter = (country) => {
   let countryA = goods.map(x => x.country);
   for (let key of countryA) { if (country === key) { return goods.filter(x => { return x.country === key }); }; };
 };
@@ -60,7 +60,7 @@ const countryFilter = (country) => {
  * @param {string} os
  * @returns {*}
  */
-const osFilter = (os) => { 
+const osFilter = (os) => {
   let osX = goods.map(x => x.os);
   for (let key of osX) { if (os === key) { return goods.filter(x => { return x.os === key }); }; };
 };
@@ -76,25 +76,25 @@ const rangeFilter = (from, to) => {
 
 const minPriceReducer = () => {
   let costsArr = goods.filter(x => { return x.price === x.price }).map(x => x.price);
-  let y = costsArr.reduce((accum, minPrice) => { return Math.min(accum, minPrice) }, Infinity); 
+  let y = costsArr.reduce((accum, minPrice) => { return Math.min(accum, minPrice) }, Infinity);
   return y;
 };
 
 const maxPriceReducer = () => {
   let costsArr = goods.filter(x => { return x.price === x.price }).map(x => x.price);
-  let x = costsArr.reduce((accum, maxPrice) => { return Math.max(accum, maxPrice) }, -Infinity); 
+  let x = costsArr.reduce((accum, maxPrice) => { return Math.max(accum, maxPrice) }, -Infinity);
   return x;
 };
 
 
 const toMaxSorter = () => {
   let i = goods.map(t => t);
-  return i.sort((a, b) => { return b.price - a.price});
+  return i.sort((a, b) => { return b.price - a.price });
 };
 
 const toMinSorter = () => {
   let i = goods.map(t => t);
-  return i.sort((a, b) => { return a.price - b.price});
+  return i.sort((a, b) => { return a.price - b.price });
 };
 
 export const filters = {
@@ -117,40 +117,3 @@ export const sorters = {
   toMaxSorter,
   toMinSorter,
 };
-
-//let x = goods.map(y => y.price);
-//x.reduce((from, to) => { if (from === x.price) {return x.price >= from} })
-//let costsArr = goods.filter(x => { return x.price === x.price }).map(x => x.price)
-
-/*
-document.querySelector("body > main > aside > section:nth-child(2) > div")
-<div class="sorters">
-                <button data-sorter="Max">
-                    Max price first
-                </button>
-                <button data-sorter="Min">
-                    Min price first
-                </button>
-            </div>
-
-*/
-
-/*
-if (brand === 'Samsung') { return goods.filter(x => { return x.brand === 'Samsung' }) }
-else if (brand === 'Apple') { return goods.filter(x => { return x.brand === 'Apple' }) }
-else if (brand === 'Xiaomi') { return goods.filter(x => { return x.brand === 'Xiaomi' }) }
-else if (brand === 'Sony') { return goods.filter(x => { return x.brand === 'Sony' }) }
-else if (brand === 'Motorola') { return goods.filter(x => { return x.brand === 'Motorola' }) }
-*/
-
-/*
-if (color === 'white') { return goods.filter((color) => { return color.color === colors.white }) }
-else if (color === 'black') { return goods.filter((color) => { return color.color === colors.black }) }
-else if (color === 'purple') { return goods.filter((color) => { return color.color === colors.purple }) }
-else if (color === 'grey') { return goods.filter((color) => { return color.color === colors.grey }) }
-else if (color === 'blue') { return goods.filter((color) => { return color.color === colors.blue }) }
-else if (color === 'gold') { return goods.filter((color) => { return color.color === colors.gold }) }
-else if (color === 'green') { return goods.filter((color) => { return color.color === colors.green }) }
-else if (color === 'red') { return goods.filter((color) => { return color.color === colors.red }) }
-else if (color === 'pink') { return goods.filter((color) => { return color.color === colors.pink }) }
-*/
